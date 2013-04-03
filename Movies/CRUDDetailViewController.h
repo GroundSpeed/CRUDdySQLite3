@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
+#import "DatabaseController.h"
 
 @interface CRUDDetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
-
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (nonatomic, strong) IBOutlet UITextField *txtMovieID;
+@property (nonatomic, strong) IBOutlet UITextField *txtTitle;
+@property (nonatomic, strong) IBOutlet UITextField *txtYear;
+@property (nonatomic, strong) IBOutlet UITextField *txtRating;
+@property (nonatomic, strong) IBOutlet UITextField *txtLength;
+
+-(void)setLabelsForMovie: (Movie *) theMovie;
+-(void)updateMovie:(id)sender;
+
+
 @end

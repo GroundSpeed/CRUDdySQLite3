@@ -21,18 +21,28 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = NSLocalizedString(@"Movies", @"Movies");
     }
     return self;
 }
-							
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self loadMovieObject];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    
+    [self loadMovieObject];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                               target:self
+                                                                               action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -61,7 +71,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return _arrayMovies.count;
 }
 
 // Customize the appearance of table view cells.
@@ -75,9 +85,9 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    Movie *movies = [_arrayMovies objectAtIndex:[indexPath row]];
+    cell.textLabel.text = movies.strTitle;
+    
     return cell;
 }
 
@@ -118,9 +128,35 @@
     if (!self.detailViewController) {
         self.detailViewController = [[CRUDDetailViewController alloc] initWithNibName:@"CRUDDetailViewController" bundle:nil];
     }
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+
+//    NSDate *object = _objects[indexPath.row];
+//    self.detailViewController.detailItem = object;
+//    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    
+    Movie *theMovie = [_arrayMovies objectAtIndex:[indexPath row]];
+    
+    //  Set the title of the detail page
+    [self.detailViewController setTitle:theMovie.strTitle];
+    
+    //  Push the detail controller on to the stack
     [self.navigationController pushViewController:self.detailViewController animated:YES];
+    
+    //  Populate the detail view by calling its setLabelsForMovie method
+    [self.detailViewController setLabelsForMovie:theMovie];
+    self.detailViewController=nil;
+}
+
+#pragma mark User Methods
+
+-(void) loadMovieObject
+{
+    DatabaseController *dbController = [[DatabaseController alloc] init];
+    
+    //  Fire the dbController getAllCustomers method to fill our array
+    _arrayMovies = [dbController getAllMovies];
+    
+    //  Release the dbAccess object to free its memory
+    dbController=nil;
 }
 
 @end

@@ -40,6 +40,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(updateMovie:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,9 +55,36 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Detail", @"Detail");
+        self.title = NSLocalizedString(@"Movie Details", @"Movie Details");
     }
     return self;
+}
+
+#pragma mark User Methods
+
+-(void) setLabelsForMovie:(Movie *)theMovie
+{
+    //  Set the labels to the values passed of the passed customer object
+    _txtMovieID.text=[NSString stringWithFormat:@"%i", theMovie.intMovieId];
+    _txtTitle.text=theMovie.strTitle;
+    _txtYear.text=[NSString stringWithFormat:@"%i", theMovie.intYear];
+    _txtRating.text=theMovie.strRating;
+    _txtLength.text=theMovie.strLength;
+}
+
+-(void) updateMovie:(id)sender
+{
+    //  Create an instance of DBServer class.
+    DatabaseController *dbController = [[DatabaseController alloc] init];
+    
+    [dbController updateMovie:[_txtMovieID.text intValue]
+                        Title:_txtTitle.text
+                         Year:[_txtYear.text intValue]
+                       Rating:_txtRating.text
+                       Length:_txtLength.text];
+
+    //  Release the dbAccess object to free its memory
+    dbController=nil;
 }
 							
 @end

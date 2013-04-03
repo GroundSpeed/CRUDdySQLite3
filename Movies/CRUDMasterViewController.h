@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
+#import "DatabaseController.h"
 
 @class CRUDDetailViewController;
 
 @interface CRUDMasterViewController : UITableViewController
 
 @property (strong, nonatomic) CRUDDetailViewController *detailViewController;
+@property (strong, nonatomic) NSMutableArray *arrayMovies;
+
+-(void)loadMovieObject;
 
 @end
+

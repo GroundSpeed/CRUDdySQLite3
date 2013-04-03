@@ -72,7 +72,6 @@
 		955C94D8170BBEB100BF279B = {
 			isa = PBXGroup;
 			children = (
-				955C9513170BBF1200BF279B /* libsqlite3.0.dylib */,
 				955C94ED170BBEB200BF279B /* Movies */,
 				955C94E6170BBEB100BF279B /* Frameworks */,
 				955C94E4170BBEB100BF279B /* Products */,
@@ -90,6 +89,7 @@
 		955C94E6170BBEB100BF279B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				955C9513170BBF1200BF279B /* libsqlite3.0.dylib */,
 				955C94E7170BBEB200BF279B /* UIKit.framework */,
 				955C94E9170BBEB200BF279B /* Foundation.framework */,
 				955C94EB170BBEB200BF279B /* CoreGraphics.framework */,
@@ -355,6 +355,7 @@
 				955C950F170BBEB200BF279B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

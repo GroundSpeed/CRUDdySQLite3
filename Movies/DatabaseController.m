@@ -142,7 +142,7 @@ sqlite3 *sqlDatabase;
     else
     {
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"INSERT INTO Movie(title, year, rating, length) VALUES ('%@','%i', %@, '%@')", fldTitle, fldYear, fldRating, fldLength];
+                               @"INSERT INTO Movies (title, year, rating, length) VALUES ('%@',%i, '%@', '%@')", fldTitle, fldYear, fldRating, fldLength];
         
         const char *sql = [insertSQL UTF8String];
         

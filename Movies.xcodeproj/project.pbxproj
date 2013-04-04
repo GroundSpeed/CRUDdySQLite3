@@ -24,6 +24,8 @@
 		955C9517170BBFF300BF279B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 955C9516170BBFF300BF279B /* Movie.m */; };
 		955C9519170BC0AB00BF279B /* movies.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 955C9518170BC0AB00BF279B /* movies.sqlite3 */; };
 		955C9520170BC79900BF279B /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955C951F170BC79900BF279B /* DatabaseController.m */; };
+		95E02632170E210E002C7552 /* CRUDNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E02630170E210E002C7552 /* CRUDNewViewController.m */; };
+		95E02633170E210E002C7552 /* CRUDNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E02631170E210E002C7552 /* CRUDNewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,9 @@
 		955C9518170BC0AB00BF279B /* movies.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = movies.sqlite3; path = ../../../../../../Dropbox/Personal/Talks/CRUDdySQLite3/movies.sqlite3; sourceTree = "<group>"; };
 		955C951E170BC79900BF279B /* DatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseController.h; sourceTree = "<group>"; };
 		955C951F170BC79900BF279B /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseController.m; sourceTree = "<group>"; };
+		95E0262F170E210E002C7552 /* CRUDNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUDNewViewController.h; sourceTree = "<group>"; };
+		95E02630170E210E002C7552 /* CRUDNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUDNewViewController.m; sourceTree = "<group>"; };
+		95E02631170E210E002C7552 /* CRUDNewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRUDNewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,7 @@
 			children = (
 				955C9505170BBEB200BF279B /* CRUDMasterViewController.xib */,
 				955C9508170BBEB200BF279B /* CRUDDetailViewController.xib */,
+				95E02631170E210E002C7552 /* CRUDNewViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 				955C9500170BBEB200BF279B /* CRUDMasterViewController.m */,
 				955C9502170BBEB200BF279B /* CRUDDetailViewController.h */,
 				955C9503170BBEB200BF279B /* CRUDDetailViewController.m */,
+				95E0262F170E210E002C7552 /* CRUDNewViewController.h */,
+				95E02630170E210E002C7552 /* CRUDNewViewController.m */,
 				955C951E170BC79900BF279B /* DatabaseController.h */,
 				955C951F170BC79900BF279B /* DatabaseController.m */,
 			);
@@ -215,6 +223,7 @@
 				955C9507170BBEB200BF279B /* CRUDMasterViewController.xib in Resources */,
 				955C950A170BBEB200BF279B /* CRUDDetailViewController.xib in Resources */,
 				955C9519170BC0AB00BF279B /* movies.sqlite3 in Resources */,
+				95E02633170E210E002C7552 /* CRUDNewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +240,7 @@
 				955C9504170BBEB200BF279B /* CRUDDetailViewController.m in Sources */,
 				955C9517170BBFF300BF279B /* Movie.m in Sources */,
 				955C9520170BC79900BF279B /* DatabaseController.m in Sources */,
+				95E02632170E210E002C7552 /* CRUDNewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

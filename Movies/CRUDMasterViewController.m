@@ -7,8 +7,8 @@
 //
 
 #import "CRUDMasterViewController.h"
-
 #import "CRUDDetailViewController.h"
+#import "CRUDNewViewController.h"
 
 @interface CRUDMasterViewController () {
     NSMutableArray *_objects;
@@ -52,15 +52,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//- (void)insertNewObject:(id)sender
+//{
+//    if (!_objects) {
+//        _objects = [[NSMutableArray alloc] init];
+//    }
+//    [_objects insertObject:[NSDate date] atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 #pragma mark - Table View
 
@@ -100,7 +100,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        DatabaseController *dbController = [[DatabaseController alloc] init];
+        Movie *theMovie = [_arrayMovies objectAtIndex:[indexPath row]];
+        [dbController deleteMovie:theMovie.intMovieId];
+        
+        [_arrayMovies removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -157,6 +161,17 @@
     
     //  Release the dbAccess object to free its memory
     dbController=nil;
+}
+
+- (void)insertNewObject:(id)sender
+{
+    CRUDNewViewController *newCustomerView = [[CRUDNewViewController alloc] initWithNibName:@"CRUDNewViewController" bundle:nil];
+    
+    //  Set the title of the detail page
+    [newCustomerView setTitle:@"New Movie"];
+    [self.navigationController pushViewController:newCustomerView animated:YES];
+    
+    newCustomerView=nil;
 }
 
 @end

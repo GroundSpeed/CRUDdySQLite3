@@ -22,8 +22,8 @@
 		955C950A170BBEB200BF279B /* CRUDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955C9508170BBEB200BF279B /* CRUDDetailViewController.xib */; };
 		955C9514170BBF1200BF279B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955C9513170BBF1200BF279B /* libsqlite3.0.dylib */; };
 		955C9517170BBFF300BF279B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 955C9516170BBFF300BF279B /* Movie.m */; };
-		955C9519170BC0AB00BF279B /* movies.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 955C9518170BC0AB00BF279B /* movies.sqlite3 */; };
 		955C9520170BC79900BF279B /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955C951F170BC79900BF279B /* DatabaseController.m */; };
+		95DB774117B7FC79000A84B2 /* movies.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 95DB774017B7FC79000A84B2 /* movies.sqlite3 */; };
 		95E02632170E210E002C7552 /* CRUDNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E02630170E210E002C7552 /* CRUDNewViewController.m */; };
 		95E02633170E210E002C7552 /* CRUDNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E02631170E210E002C7552 /* CRUDNewViewController.xib */; };
 /* End PBXBuildFile section */
@@ -51,9 +51,9 @@
 		955C9513170BBF1200BF279B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		955C9515170BBFF300BF279B /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		955C9516170BBFF300BF279B /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
-		955C9518170BC0AB00BF279B /* movies.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = movies.sqlite3; path = ../../../../../../Dropbox/Personal/Talks/CRUDdySQLite3/movies.sqlite3; sourceTree = "<group>"; };
 		955C951E170BC79900BF279B /* DatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseController.h; sourceTree = "<group>"; };
 		955C951F170BC79900BF279B /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseController.m; sourceTree = "<group>"; };
+		95DB774017B7FC79000A84B2 /* movies.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movies.sqlite3; sourceTree = "<group>"; };
 		95E0262F170E210E002C7552 /* CRUDNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRUDNewViewController.h; sourceTree = "<group>"; };
 		95E02630170E210E002C7552 /* CRUDNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRUDNewViewController.m; sourceTree = "<group>"; };
 		95E02631170E210E002C7552 /* CRUDNewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRUDNewViewController.xib; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		955C94EE170BBEB200BF279B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				955C9518170BC0AB00BF279B /* movies.sqlite3 */,
+				95DB774017B7FC79000A84B2 /* movies.sqlite3 */,
 				955C94EF170BBEB200BF279B /* Movies-Info.plist */,
 				955C94F0170BBEB200BF279B /* InfoPlist.strings */,
 				955C94F3170BBEB200BF279B /* main.m */,
@@ -222,8 +222,8 @@
 				955C94FE170BBEB200BF279B /* Default-568h@2x.png in Resources */,
 				955C9507170BBEB200BF279B /* CRUDMasterViewController.xib in Resources */,
 				955C950A170BBEB200BF279B /* CRUDDetailViewController.xib in Resources */,
-				955C9519170BC0AB00BF279B /* movies.sqlite3 in Resources */,
 				95E02633170E210E002C7552 /* CRUDNewViewController.xib in Resources */,
+				95DB774117B7FC79000A84B2 /* movies.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

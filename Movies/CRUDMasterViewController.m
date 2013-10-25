@@ -146,7 +146,7 @@
     [self.navigationController pushViewController:self.detailViewController animated:YES];
     
     //  Populate the detail view by calling its setLabelsForMovie method
-    [self.detailViewController setLabelsForMovie:theMovie];
+    [self.detailViewController setTheMovie:theMovie];
     self.detailViewController=nil;
 }
 

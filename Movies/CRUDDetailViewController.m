@@ -43,6 +43,7 @@
 
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(updateMovie:)];
     self.navigationItem.rightBarButtonItem = saveButton;
+    [self setLabelsForMovie];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,14 +63,15 @@
 
 #pragma mark User Methods
 
--(void) setLabelsForMovie:(Movie *)theMovie
+-(void) setLabelsForMovie
 {
     //  Set the labels to the values passed of the passed customer object
-    _txtMovieID.text=[NSString stringWithFormat:@"%i", theMovie.intMovieId];
-    _txtTitle.text=theMovie.strTitle;
-    _txtYear.text=[NSString stringWithFormat:@"%i", theMovie.intYear];
-    _txtRating.text=theMovie.strRating;
-    _txtLength.text=theMovie.strLength;
+    
+    _txtMovieID.text=[NSString stringWithFormat:@"%i", self.theMovie.intMovieId];
+    _txtTitle.text=self.theMovie.strTitle;
+    _txtYear.text=[NSString stringWithFormat:@"%i", self.theMovie.intYear];
+    _txtRating.text=self.theMovie.strRating;
+    _txtLength.text=self.theMovie.strLength;
 }
 
 -(void) updateMovie:(id)sender

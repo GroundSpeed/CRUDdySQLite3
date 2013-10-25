@@ -20,8 +20,9 @@
 @property (nonatomic, strong) IBOutlet UITextField *txtYear;
 @property (nonatomic, strong) IBOutlet UITextField *txtRating;
 @property (nonatomic, strong) IBOutlet UITextField *txtLength;
+@property (nonatomic, strong) Movie *theMovie;
 
--(void)setLabelsForMovie: (Movie *) theMovie;
+-(void)setLabelsForMovie;
 -(void)updateMovie:(id)sender;
 
 
